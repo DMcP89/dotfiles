@@ -1,0 +1,6 @@
+# Shortcuts
+alias ve='source .venv/bin/activate'
+alias g='git'
+alias gh='history|grep'
+alias cpv='rsync -ah --info=progress2'
+alias bd='$HOME/workspace/dotfiles/backup.sh'
