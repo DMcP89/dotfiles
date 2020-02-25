@@ -15,10 +15,14 @@ fi
 cp $HOME/{.bash_aliases,.bashrc,.gitconfig,.vimrc,.profile} $DIR
 cp -r $HOME/.vim/colors $DIR/.vim/
 
-gs="$(git --git-dir $DIR/.git status | grep -i "modified")"
+cd $DIR
+
+gs="$(git status | grep -i "modified")"
 if [[ $gs == *"modified"* ]]; then
     # push to Github
-    git --git-dir $DIR/.git add -u;
-    git --git-dir $DIR/.git commit -m "New backup `date +'%Y-%m-%d %H:%M:%S'`";
-    git --git-dir $DIR/.git push origin master
+    git add -u;
+    git commit -m "New backup `date +'%Y-%m-%d %H:%M:%S'`";
+    git push origin master
 fi
+
+cd -
