@@ -125,7 +125,7 @@ export PATH=$PATH:/usr/local/go/bin
 # Tiny care terminal settings
 export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 export TTC_SAY_BOX='ironman.ansi'
-export TTC_REPOS='~/workspace'
+export TTC_REPOS='~/workspace, /mnt/c/Users/dmcp8/workspace'
 export TTC_REPOS_DEPTH=5
 export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
