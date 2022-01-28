@@ -123,14 +123,18 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 
 # Tiny care terminal settings
-export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
-export TTC_SAY_BOX='ironman.ansi'
-export TTC_REPOS='~/workspace, /mnt/c/Users/dmcp8/workspace'
-export TTC_REPOS_DEPTH=5
+#export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
+export TTC_SAY_BOX='mario'
+export TTC_REPOS="$HOME/workspace/python"
+export TTC_REPOS_DEPTH=3
 export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
-export TTC_UPDATE_INTERVAL=10
-export TTC_APIKEYS=false
+export TTC_UPDATE_INTERVAL=1
+export TTC_APIKEYS=true
+export TTC_CONSUMER_KEY='YPwSTpA5RvEjtNYs8fErTLmL3'
+export TTC_CONSUMER_SECRET='wrqUXavN2aibnlmMY2xfeNPbFcrny8s9l4DI76X5pmcGjIjlTj'
+export TTC_ACCESS_TOKEN='23538980-mJq3DQPYqcGjLadF7mFo57e7Et3FsK2wCfYQBXiFA'
+export TTC_ACCESS_TOKEN_SECRET='OWCELc1YyGTtozEL4oacAJIcH2T9pdwIcgsOkMqXgAlOA'
 
 # Git Prompt
 parse_git_branch() {      
@@ -143,4 +147,21 @@ if [ -f ~/.bash_ssh ]; then
     . ~/.bash_ssh
 fi
 
+# Secret definitions
+if [ -f ~/.bash_secrets ]; then
+   . ~/.bash_secrets
+fi
+
+
+# Powerline
+export PATH=$PATH:$HOME/.local/bin
+
+if [ -f $HOME/.local/lib/python3.9/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    $HOME/.local/bin/powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source $HOME/.local/lib/python3.9/site-packages/powerline/bindings/bash/powerline.sh
+fi
+
+export TODOIST_TOKEN="df6d765ce4218c99005bf948f7d10c43e0696acd"
 cd $HOME

@@ -4,6 +4,9 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
@@ -27,3 +30,9 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+#Start docker
+sudo $HOME/.local/bin/start-docker.sh > /dev/null
+
+export PATH="$HOME/.poetry/bin:$PATH"

@@ -12,6 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'preservim/nerdtree'
 Plugin 'ap/vim-buftabline'
+Plugin 'pylint.vim'
+
 
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -40,7 +42,7 @@ let NERDTreeMapOpenInTab='\r'
 
 
 " Colors
-colorscheme badwolf  
+colorscheme darkblue 
 syntax enable
 
 " UI
