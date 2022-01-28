@@ -12,7 +12,7 @@ else
 fi
 
 # copy dotfiles
-cp $HOME/{.bash_aliases,.bashrc,.gitconfig,.vimrc,.profile} $DIR
+cp $HOME/{.bash_aliases,.bashrc,.gitconfig,.vimrc} $DIR
 cp -r $HOME/.vim/colors $DIR/.vim/
 
 cd $DIR
