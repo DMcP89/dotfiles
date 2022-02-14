@@ -1,6 +1,6 @@
 ---
 - name: Install apt packages
-  import_playbook: apt-pacakges.yml
+  import_playbook: apt-packages.yml
 
 - name: Install vundle
   import_playbook: vundle-install.yml
