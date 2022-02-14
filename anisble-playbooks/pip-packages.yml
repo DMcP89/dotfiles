@@ -1,0 +1,20 @@
+---
+- name: npm-packages
+  hosts: localhost
+  tasks:
+    - name: Install Powerline
+      pip:
+        name: powerline-status
+    - name: Install Powerline-gitstatus
+      pip:
+        name: powerline-gitstatus
+    - name: Install poetry
+      shell: >
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+    - name: Clone pyenv repo
+      git:
+        repo: 'https://github.com/pyenv/pyenv.git'
+        dest: ~/.pyenv
+    - name: Compile dynamic bash extension
+      shell: >
+        cd ~/.pyenv && src/configure && make -C src

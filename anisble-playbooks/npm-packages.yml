@@ -1,0 +1,16 @@
+---
+- name: npm-packages
+  hosts: localhost
+  tasks:
+    - name: Install nvm
+      shell: >
+        curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+        creates=/home/{{ ansible_user_id }}/.nvm/nvm.sh
+    - name: Install node and set version
+      shell: >
+        /bin/bash -c "source ~/.nvm/nvm.sh && nvm install node"
+    - name: Install "coffee-script" node.js package.
+      community.general.npm:
+        name: tiny-care-terminal
+        global: yes
+      become: true

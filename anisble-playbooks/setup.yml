@@ -1,0 +1,15 @@
+---
+- name: Install apt packages
+  import_playbook: apt-pacakges.yml
+
+- name: Install vundle
+  import_playbook: vundle-install.yml
+
+- name: Install gems
+  import_playbook: gem-packages.yml
+
+- name: Install node packages
+  import_playbook: npm-packages.yml
+
+- name: Install python packages
+  import_playbook: pip-packages.yml

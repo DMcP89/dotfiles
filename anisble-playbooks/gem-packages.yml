@@ -1,0 +1,8 @@
+---
+- name: gem-packages
+  hosts: localhost
+  tasks:
+    - name: Install mdless
+      community.general.gem:
+        name: mdless
+        state: latest
