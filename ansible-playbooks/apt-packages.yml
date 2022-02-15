@@ -2,6 +2,13 @@
 - name: apt-pacakges
   hosts: localhost
   tasks:
+      
+      - name: apt update
+        apt:
+          update_cache: yes
+      - name: apt upgrade
+        apt:
+          upgrade: yes
       - name: Install a list of packages
         apt:
             pkg:
