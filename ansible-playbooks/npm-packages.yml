@@ -6,6 +6,11 @@
       shell: >
         curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
         creates=/home/{{ ansible_user_id }}/.nvm/nvm.sh
+    - name: Create a .local/bin if it does not exist
+      ansible.builtin.file:
+        path: /home/{{ ansible_user_id }}/.local/bin
+        state: directory
+        mode: '0755'
     - name: Install node and set version
       shell: >
         /bin/bash -c "source ~/.nvm/nvm.sh && nvm install node && ln -s $(which npm) /home/{{ ansible_user_id }}/.local/bin/npm"
