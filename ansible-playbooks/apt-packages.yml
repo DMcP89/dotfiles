@@ -11,6 +11,24 @@
         apt:
           upgrade: yes
         become: true
+      - name: Install a packages to setup docker
+        apt:
+            pkg:
+            - curl
+            - ca-certificates
+            - gnupg
+            - lsb-release
+        become: true
+      - name: Add docker gpg key
+        shell: >
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+        become: true
+      - name: Add Docker repository
+        shell: >
+          echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+          $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+        become: true
       - name: Install a list of packages
         apt:
             pkg:
@@ -18,10 +36,8 @@
             - base-passwd
             - bash
             - build-essential
-            - ca-certificates
             - cloud-init
             - containerd.io
-            - curl
             - dash
             - dbus-x11
             - debhelper
@@ -36,7 +52,6 @@
             - findutils
             - fontconfig-config
             - fonts-dejavu-core
-            - gnupg
             - grep
             - gzip
             - hostname
@@ -102,7 +117,6 @@
             - libxv1
             - libxxf86dga1
             - libxxf86vm1
-            - lsb-release
             - mesa-vulkan-drivers
             - ncurses-base
             - ncurses-bin
