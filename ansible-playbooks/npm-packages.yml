@@ -13,10 +13,9 @@
         mode: '0755'
     - name: Install node and set version
       shell: >
-        /bin/bash -c "source ~/.nvm/nvm.sh && nvm install node && ln -s $(which npm) /home/{{ ansible_user_id }}/.local/bin/npm"
+        /bin/bash -c "source ~/.nvm/nvm.sh && nvm install --lts 10 && ln -s $(which npm) /home/{{ ansible_user_id }}/.local/bin/npm"
     - name: Install "tiny-care-terminal" node.js package.
       community.general.npm:
         name: tiny-care-terminal
         global: yes
         executable: "/home/{{ ansible_user_id }}/.local/bin/npm"
-      become: true
