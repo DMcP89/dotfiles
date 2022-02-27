@@ -125,7 +125,7 @@ export PATH=$PATH:/usr/local/go/bin
 # Tiny care terminal settings
 #export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 export TTC_SAY_BOX='mario'
-export TTC_REPOS="$HOME/workspace/python"
+export TTC_REPOS="$HOME/workspace"
 export TTC_REPOS_DEPTH=3
 export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
@@ -164,4 +164,15 @@ if [ -f $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerli
 fi
 
 export TODOIST_TOKEN="df6d765ce4218c99005bf948f7d10c43e0696acd"
-cd $HOME
+
+
+
+# Poetry
+export PATH=$PATH:$HOME/.poetry/bin
+
+# Pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
