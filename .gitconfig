@@ -10,3 +10,5 @@
 	 stash-all = stash save --include-untracked  
 	 undo = reset --soft HEAD^  
 	 graph = log --graph --all ' --pretty=format:%Cred%h%Creset %ad | [%C(bold blue)%an%Creset] %Cgreen%d%Creset %s' --date=iso
+[init]
+	defaultBranch = main
