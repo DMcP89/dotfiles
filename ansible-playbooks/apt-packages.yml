@@ -148,6 +148,7 @@
             - python3-zipp
             - python3
             - ruby-full
+            - rsync
             - show-motd
             - ssh-import-id
             - sysvinit-utils
