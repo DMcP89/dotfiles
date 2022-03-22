@@ -105,6 +105,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_secrets ]; then
+    . ~/.bash_secrets
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -131,10 +135,6 @@ export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
 export TTC_UPDATE_INTERVAL=1
 export TTC_APIKEYS=true
-export TTC_CONSUMER_KEY='YPwSTpA5RvEjtNYs8fErTLmL3'
-export TTC_CONSUMER_SECRET='wrqUXavN2aibnlmMY2xfeNPbFcrny8s9l4DI76X5pmcGjIjlTj'
-export TTC_ACCESS_TOKEN='23538980-mJq3DQPYqcGjLadF7mFo57e7Et3FsK2wCfYQBXiFA'
-export TTC_ACCESS_TOKEN_SECRET='OWCELc1YyGTtozEL4oacAJIcH2T9pdwIcgsOkMqXgAlOA'
 
 # Git Prompt
 parse_git_branch() {      
@@ -162,8 +162,6 @@ if [ -f $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerli
     POWERLINE_BASH_SELECT=1
     source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 fi
-
-export TODOIST_TOKEN="df6d765ce4218c99005bf948f7d10c43e0696acd"
 
 
 
