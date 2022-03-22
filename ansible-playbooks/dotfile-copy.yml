@@ -1,0 +1,28 @@
+---
+- name: Copy dotfiles
+  hosts: localhost
+  tasks:
+  - name: Copy .bashrc
+    copy: 
+      src:  "{{ playbook_dir }}/../.bashrc"
+      dest: "/home/{{ ansible_user_id }}"
+  - name: Copy .bash_aliases
+    copy: 
+      src:  "{{ playbook_dir }}/../.bash_aliases"
+      dest: "/home/{{ ansible_user_id }}"
+  - name: Copy .profile
+    copy: 
+      src:  "{{ playbook_dir }}/../.profile"
+      dest: "/home/{{ ansible_user_id }}"
+  - name: Copy .vimrc
+    copy: 
+      src:  "{{ playbook_dir }}/../.vimrc"
+      dest: "/home/{{ ansible_user_id }}"
+  - name: Copy .gitconfig
+    copy: 
+      src:  "{{ playbook_dir }}/../.gitconfig"
+      dest: "/home/{{ ansible_user_id }}"
+  - name: Copy .vim
+    copy: 
+      src:  "{{ playbook_dir }}/../.vim"
+      dest: "/home/{{ ansible_user_id }}"

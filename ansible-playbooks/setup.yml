@@ -2,6 +2,9 @@
 - name: Install apt packages
   import_playbook: apt-packages.yml
 
+- name: Copy dotfiles
+  import_playbook: dotfile-copy.yml
+
 - name: Install vundle
   import_playbook: vundle-install.yml
 
@@ -13,3 +16,6 @@
 
 - name: Install python packages
   import_playbook: pip-packages.yml
+
+- name: Install pyevn virtualenv
+  import_playbook: pyenv-virtualenv-install.yml
