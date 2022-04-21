@@ -1,5 +1,5 @@
 ---
-- name: npm-packages
+- name: pip-packages
   hosts: localhost
   tasks:
     - name: Install Powerline
