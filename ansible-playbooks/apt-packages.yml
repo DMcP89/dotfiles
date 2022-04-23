@@ -61,7 +61,6 @@
             - libasyncns0
             - libdebconfclient0
             - libdrm-amdgpu1
-            - libdrm-intel1
             - libdrm-nouveau2
             - libdrm-radeon1
             - libeatmydata1
@@ -152,10 +151,6 @@
             - show-motd
             - ssh-import-id
             - sysvinit-utils
-            - ubuntu-minimal
-            - ubuntu-server
-            - ubuntu-standard
-            - ubuntu-wsl
             - update-motd
             - w3m
             - wslu

@@ -2,7 +2,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" set the runtime path to include Vundle & initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -42,7 +42,7 @@ let NERDTreeMapOpenInTab='\r'
 
 
 " Colors
-colorscheme darkblue 
+colorscheme badwolf
 syntax enable
 
 " UI
@@ -79,7 +79,7 @@ nnoremap <C-x> :bd<CR>
 " Powerline
 set laststatus=2
 
-" Search and replace
+" Search & replace
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Save from insert mode
