@@ -1,3 +1,4 @@
 .vim/bundle
 *ssh
 .bash_secrets
+.config/openaiapirc

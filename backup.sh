@@ -14,16 +14,17 @@ fi
 # copy dotfiles
 cp $HOME/{.bash_aliases,.bashrc,.gitconfig,.vimrc,.profile} $DIR
 cp -r $HOME/.vim/colors $DIR/.vim/
-cp -r $HOME/.config $DIR/.config
+cp -r $HOME/.config $DIR
 
 cd $DIR
 
 gs="$(git status | grep -i "modified")"
 if [[ $gs == *"modified"* ]]; then
     # push to Github
+    git checkout -b $(date +'%Y-%m-%d')
     git add -u;
     git commit -m "New backup `date +'%Y-%m-%d %H:%M:%S'`";
-    git push origin master
+    git push origin $(date +'%Y-%m-%d')
 fi
 
 cd -

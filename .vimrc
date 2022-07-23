@@ -2,7 +2,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle & initialize
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ap/vim-buftabline'
 Plugin 'pylint.vim'
-
+Plugin 'tom-doerr/vim_codex'
 
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -42,7 +42,7 @@ let NERDTreeMapOpenInTab='\r'
 
 
 " Colors
-colorscheme badwolf
+colorscheme badwolf 
 syntax enable
 
 " UI
@@ -79,7 +79,7 @@ nnoremap <C-x> :bd<CR>
 " Powerline
 set laststatus=2
 
-" Search & replace
+" Search and replace
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Save from insert mode
