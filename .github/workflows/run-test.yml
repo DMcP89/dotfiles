@@ -1,0 +1,19 @@
+name: dotfiles-test
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run make install
+        run: |
+          cd $GITHUB_WORKSPACE
+          make install
