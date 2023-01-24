@@ -17,7 +17,7 @@ install:
 	@echo 'Installing ansible'
 	@.local/bin/install-ansible.sh
 	@echo '-----------------------'
-	@ansible-playbook ansible-playbooks/setup.yml --become-ask-pass
+	@ansible-playbook ansible-playbooks/setup.yml
 
 test:
 	@echo 'Testing installation of dotfiles from Tag: '${TAG}
