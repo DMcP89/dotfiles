@@ -151,10 +151,13 @@
             - show-motd
             - ssh-import-id
             - sysvinit-utils
+            - sqlite
             - update-motd
             - w3m
             - wslu
             - x11-common
             - x11-utils
             - xsltproc
+            - libpq-dev
+            - libmysqlclient-dev
         become: true
