@@ -2,3 +2,5 @@
 *ssh
 .bash_secrets
 .config/openaiapirc
+.config/helm
+.config/configstore

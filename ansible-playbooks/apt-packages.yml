@@ -126,7 +126,6 @@
             - openssh-sftp-server
             - pkg-config
             - pulseaudio-utils
-            - python-dev-is-python2
             - python3-distutils
             - python3-docutils
             - python3-importlib-metadata
@@ -151,10 +150,13 @@
             - show-motd
             - ssh-import-id
             - sysvinit-utils
+            - sqlite
             - update-motd
             - w3m
             - wslu
             - x11-common
             - x11-utils
             - xsltproc
+            - libpq-dev
+            - libmysqlclient-dev
         become: true
