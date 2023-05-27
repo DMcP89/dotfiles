@@ -84,3 +84,8 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Save from insert mode
 inoremap <F3> <c-o>:w<cr>
+
+
+" Ctrl + X to call CreateCompletion
+nnoremap  <C-x> :CreateCompletion<CR>
+inoremap  <C-x> <Esc>li<C-g>u<Esc>l:CreateCompletion<CR>

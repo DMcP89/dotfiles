@@ -134,7 +134,7 @@ export TTC_REPOS_DEPTH=3
 export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
 export TTC_UPDATE_INTERVAL=1
-export TTC_APIKEYS=true
+export TTC_APIKEYS=false
 
 # Git Prompt
 parse_git_branch() {      
@@ -174,3 +174,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
+
+
+complete -C /usr/bin/terraform terraform
