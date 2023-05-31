@@ -19,3 +19,6 @@
 
 - name: Install pyevn virtualenv
   import_playbook: pyenv-virtualenv-install.yml
+
+- name: Install Go
+  import_playbook: go-packages.yml

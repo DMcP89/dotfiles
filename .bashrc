@@ -134,13 +134,8 @@ export TTC_REPOS_DEPTH=3
 export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
 export TTC_UPDATE_INTERVAL=1
-export TTC_APIKEYS=true
+export TTC_APIKEYS=false
 
-# Git Prompt
-parse_git_branch() {      
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/' 
-}       	
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # SSH Alias definitions
 if [ -f ~/.bash_ssh ]; then
@@ -174,3 +169,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
+
+
+complete -C /usr/bin/terraform terraform
