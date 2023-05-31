@@ -6,3 +6,4 @@
 .config/configstore
 .config/wslu
 auth*
+*.swp
