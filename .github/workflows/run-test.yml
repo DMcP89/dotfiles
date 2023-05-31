@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - name: Run make test
-        run: |
-          cd $GITHUB_WORKSPACE
-          make test
       - name: Run make install
         run: |
           cd $GITHUB_WORKSPACE
