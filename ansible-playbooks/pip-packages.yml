@@ -18,3 +18,7 @@
     - name: Compile dynamic bash extension
       shell: >
         cd ~/.pyenv && src/configure && make -C src
+    - name: Install pyenv-virtualenv
+      git:
+        repo: 'https://github.com/pyenv/pyenv-virtualenv.git'
+        dest: ~/.pyenv/plugins/pyenv-virtualenv

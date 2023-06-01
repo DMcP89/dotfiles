@@ -1,8 +1,0 @@
----
-- name: pyenv-virutalenv-install
-  hosts: localhost
-  tasks:
-    - name: Install vundle plugin manager for Vim
-      git:
-        repo: 'https://github.com/pyenv/pyenv-virtualenv.git'
-        dest: ~/.pyenv/plugins/pyenv-virtualenv
