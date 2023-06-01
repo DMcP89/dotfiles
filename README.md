@@ -8,6 +8,8 @@ Repository of configuration files for setting up my development environment. Usi
 ## Compatible OSs
 * Ubuntu 20.04 LTS
 * WSL Ubuntu 20.04 LTS
+* Ubuntu 22.04 LTS
+* WSL Ubuntu 22.04 LTS
 
 ## Setup
 1. Clone this repository
@@ -40,6 +42,7 @@ A relatively simple vim configuration that uses the powerline plugin to display 
 * [nerdtree](https://github.com/preservim/nerdtree)
 * [vim-buftabline](https://github.com/ap/vim-buftabline)
 * [pylint](https://github.com/vim-scripts/pylint.vim)
+* [vim_codex](https://https://github.com/tom-doerr/vim_codex)
 
 *Color Schemes*
 * [badwolf](https://github.com/sjl/badwolf)
@@ -58,6 +61,4 @@ A relatively simple vim configuration that uses the powerline plugin to display 
 * [Pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) is a plugin for Pyenv that allows you to create and manage virtual environments.
 
 ### Go
-
-### Rust
-
+* Installs latest version of Go
