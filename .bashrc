@@ -134,13 +134,8 @@ export TTC_REPOS_DEPTH=3
 export TTC_WEATHER='07070'
 export TTC_CELSIUS=false
 export TTC_UPDATE_INTERVAL=1
-export TTC_APIKEYS=true
+export TTC_APIKEYS=false
 
-# Git Prompt
-parse_git_branch() {      
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/' 
-}       	
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # SSH Alias definitions
 if [ -f ~/.bash_ssh ]; then
@@ -156,11 +151,11 @@ fi
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
-if [ -f $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ]; then
+if [ -f $HOME/.local/lib/python3.*/site-packages/powerline/bindings/bash/powerline.sh ]; then
     $HOME/.local/bin/powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
-    source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+    source $HOME/.local/lib/python3.*/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
 
@@ -174,3 +169,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
+
+
+complete -C /usr/bin/terraform terraform

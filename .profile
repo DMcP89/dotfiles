@@ -30,5 +30,3 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 eval "$(pyenv init --path)"
-
-export PATH="$HOME/.poetry/bin:$PATH"

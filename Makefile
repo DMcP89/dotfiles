@@ -17,6 +17,9 @@ install:
 	@echo 'Installing ansible'
 	@.local/bin/install-ansible.sh
 	@echo '-----------------------'
+	@echo 'Installing ansible dependencies'
+	@ansible-galaxy install -r requirements.yml
+	@echo '-----------------------'
 	@ansible-playbook ansible-playbooks/setup.yml
 
 test:
@@ -24,5 +27,8 @@ test:
 	@echo '-----------------------'
 	@echo 'Installing ansible'
 	@.local/bin/install-ansible.sh
+	@echo '-----------------------'
+	@echo 'Installing ansible dependencies'
+	@ansible-galaxy install -r requirements.yml
 	@echo '-----------------------'
 	@ansible-playbook ansible-playbooks/setup.yml --check

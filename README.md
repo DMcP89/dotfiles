@@ -8,6 +8,8 @@ Repository of configuration files for setting up my development environment. Usi
 ## Compatible OSs
 * Ubuntu 20.04 LTS
 * WSL Ubuntu 20.04 LTS
+* Ubuntu 22.04 LTS
+* WSL Ubuntu 22.04 LTS
 
 ## Setup
 1. Clone this repository
@@ -19,7 +21,11 @@ git clone https://github.com/DMcP89/dotfiles.git
 cd dotfiles
 .local/bin/install-ansible.sh
 ```
-3. Run ansible playbooks
+3. Install dependencies
+```
+ansible-galaxy install -r requirements.yml
+```
+4. Run ansible playbooks
 ```
 cd ansible-playbooks
 ansible-playbook setup.yml --ask-become-pass
@@ -36,21 +42,23 @@ A relatively simple vim configuration that uses the powerline plugin to display 
 * [nerdtree](https://github.com/preservim/nerdtree)
 * [vim-buftabline](https://github.com/ap/vim-buftabline)
 * [pylint](https://github.com/vim-scripts/pylint.vim)
+* [vim_codex](https://https://github.com/tom-doerr/vim_codex)
 
 *Color Schemes*
 * [badwolf](https://github.com/sjl/badwolf)
 
-### Ruby Gems
-[mdless](https://github.com/ttscoff/mdless) is a gem that allows you to display markdown in your terminal.
+### Ruby
+* [mdless](https://github.com/ttscoff/mdless) is a gem that allows you to display markdown in your terminal.
 
-### NVM
-[Nvm](https://github.com/nvm-sh/nvm) is a node version manager that allows you to install and manage multiple versions of node.
+### NodeJS
+* [Nvm](https://github.com/nvm-sh/nvm) is a node version manager that allows you to install and manage multiple versions of node.
+
 ### Python
-[Poetry](https://github.com/python-poetry/poetry) helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere.
+* [Poetry](https://github.com/python-poetry/poetry) helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere.
 
-[Pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
+* [Pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
-[Pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) is a plugin for Pyenv that allows you to create and manage virtual environments.
+* [Pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) is a plugin for Pyenv that allows you to create and manage virtual environments.
 
-
-
+### Go
+* Installs latest version of Go

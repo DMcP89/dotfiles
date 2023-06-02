@@ -1,0 +1,9 @@
+---
+- name: go-pacakges
+  hosts: localhost
+  become: true
+  
+  roles:
+    - name: gantsign.golang
+      vars:
+        golang_install_dir: /usr/local/go

@@ -153,7 +153,6 @@
             - sqlite
             - update-motd
             - w3m
-            - wslu
             - x11-common
             - x11-utils
             - xsltproc

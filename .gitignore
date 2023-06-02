@@ -4,3 +4,6 @@
 .config/openaiapirc
 .config/helm
 .config/configstore
+.config/wslu
+auth*
+*.swp
