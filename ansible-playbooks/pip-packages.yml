@@ -2,6 +2,9 @@
 - name: pip-packages
   hosts: localhost
   tasks:
+    - name: Install OpenAI
+      pip:
+        name: OpenAI
     - name: Install Powerline
       pip:
         name: powerline-status

@@ -26,3 +26,7 @@
     copy: 
       src:  "{{ playbook_dir }}/../.vim"
       dest: "/home/{{ ansible_user_id }}"
+  - name: Copy .config
+    copy: 
+      src:  "{{ playbook_dir }}/../.config"
+      dest: "/home/{{ ansible_user_id }}"

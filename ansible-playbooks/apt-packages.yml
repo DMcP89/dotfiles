@@ -1,8 +1,7 @@
 ---
 - name: apt-pacakges
   hosts: localhost
-  tasks:
-      
+  tasks: 
       - name: apt update
         apt:
           update_cache: yes
@@ -159,3 +158,9 @@
             - libpq-dev
             - libmysqlclient-dev
         become: true
+      - name: Add my user to docker group
+        ansible.builtin.user:
+          name: james
+          shell: /bin/bash
+          groups: admins,developers
+          append: yes   
