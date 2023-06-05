@@ -1,5 +1,7 @@
 ---
 roles:
+  - name: gantsign.helm
+    src: https://github.com/gantsign/ansible-role-helm.git
   - name: gantsign.golang
     src: https://github.com/gantsign/ansible-role-golang.git
   - name: githubixx.kubectl

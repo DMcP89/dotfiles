@@ -159,4 +159,5 @@
         ignore_errors: true
   roles:
       - githubixx.kubectl
+      - gantsign.helm   
   become: true
