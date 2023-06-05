@@ -160,7 +160,7 @@
         become: true
       - name: Add my user to docker group
         ansible.builtin.user:
-          name: james
+          name: "{{ ansible_user }}"
           shell: /bin/bash
-          groups: admins,developers
+          groups: docker
           append: yes   
