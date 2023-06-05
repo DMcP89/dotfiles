@@ -162,4 +162,5 @@
         ansible.builtin.user:
           name: "{{ ansible_user_id }}"
           groups: docker
-          append: yes   
+          append: yes
+        ignore_errors: true
