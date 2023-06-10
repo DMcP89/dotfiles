@@ -160,7 +160,7 @@
           append: yes
         ignore_errors: true
   roles:
-      - githubixx.kubectl
-      - gantsign.helm
-      - diodonfrost.terraform  
+      - { role: githubixx.kubectl, ignore_errors: yes }
+      - { role: gantsign.helm, ignore_errors: yes }
+      - { role: diodonfrost.terraform, ignore_errors: yes }
   become: true
