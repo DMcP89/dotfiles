@@ -32,3 +32,14 @@ test:
 	@ansible-galaxy install -r requirements.yml
 	@echo '-----------------------'
 	@ansible-playbook ansible-playbooks/setup.yml --check
+
+local-test:
+	@echo 'Testing installation of dotfiles from Tag: '${TAG}
+	@echo '-----------------------'
+	@echo 'Installing ansible'
+	@.local/bin/install-ansible.sh
+	@echo '-----------------------'
+	@echo 'Installing ansible dependencies'
+	@ansible-galaxy install -r requirements.yml
+	@echo '-----------------------'
+	@ansible-playbook ansible-playbooks/setup.yml --check -K

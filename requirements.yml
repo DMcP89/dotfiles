@@ -3,3 +3,4 @@ roles:
   - name: gantsign.helm
   - name: gantsign.golang
   - name: githubixx.kubectl
+  - name: diodonfrost.terraform

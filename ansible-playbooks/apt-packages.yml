@@ -115,6 +115,7 @@
             - ncurses-base
             - ncurses-bin
             - ncurses-term
+            - neovim
             - openssh-server
             - openssh-sftp-server
             - pkg-config
@@ -151,6 +152,7 @@
             - xsltproc
             - libpq-dev
             - libmysqlclient-dev
+            - zsh  
       - name: Add my user to docker group
         ansible.builtin.user:
           name: "{{ ansible_user_id }}"
@@ -159,5 +161,6 @@
         ignore_errors: true
   roles:
       - githubixx.kubectl
-      - gantsign.helm   
+      - gantsign.helm
+      - diodonfrost.terraform  
   become: true
