@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles [![dotfiles-test](https://github.com/DMcP89/dotfiles/actions/workflows/run-test.yml/badge.svg)](https://github.com/DMcP89/dotfiles/actions/workflows/run-test.yml)
 Repository of configuration files for setting up my development environment. Using a combination of bash scripts and ansible playbooks the process of getting an environment setup is almost completely automated.
 
 ![powerline](./assests/powerline.png)

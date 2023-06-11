@@ -1,4 +1,6 @@
 ---
 roles:
+  - name: gantsign.helm
   - name: gantsign.golang
-    src: https://github.com/gantsign/ansible-role-golang.git
+  - name: githubixx.kubectl
+  - name: diodonfrost.terraform
