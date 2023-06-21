@@ -5,5 +5,8 @@
 .config/helm
 .config/configstore
 .config/wslu
+.config/ttyper
+.config/go
+.config/typer-go
 auth*
 *.swp

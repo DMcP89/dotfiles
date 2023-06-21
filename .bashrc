@@ -168,7 +168,9 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
+# Rust
+export PATH=$PATH:/$HOME/.cargo/bin
 
 complete -C /usr/bin/terraform terraform

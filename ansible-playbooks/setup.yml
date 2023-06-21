@@ -19,3 +19,6 @@
 
 - name: Install Go
   import_playbook: go-packages.yml
+
+- name: Install CLIs
+  import_playbook: cli-packages.yml
