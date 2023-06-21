@@ -10,9 +10,12 @@
         shell: 'unzip {{ playbook_dir }}/awscliv2.zip'
 
       - name: Install AWS CLI
-        shell: 'sudo {{ playbook_dir  }}/aws/install'
+        shell: 'sudo {{ playbook_dir  }}/aws/install -u'
         become: true
 
-      - name: Clean up AWS install
+      - name: Clean up AWS install dir
         shell: 'rm -rf {{ playbook_dir  }}/aws'
+      
+      - name: Clean up AWS cli zip
+        shell: 'rm {{ playbook_dir  }}/awscliv2.zip'
 
