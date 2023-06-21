@@ -28,7 +28,7 @@
         become: true
 
       - name: Importing gcloud public key
-        shell: 'curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg'
+        shell: 'curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -'
         become: true
       
       - name: Run apt update  
