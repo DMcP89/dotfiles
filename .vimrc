@@ -94,3 +94,6 @@ inoremap [ []<Esc>ha
 inoremap " ""<Esc>ha
 inoremap ' ''<Esc>ha
 inoremap ` ``<Esc>ha
+
+" fugitive mappings
+nnoremap <Leader>d :Gvdiffsplit

@@ -33,6 +33,7 @@
             - build-essential
             - cloud-init
             - containerd.io
+            - cargo
             - dash
             - dbus-x11
             - debhelper
