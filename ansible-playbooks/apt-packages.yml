@@ -15,6 +15,7 @@
             - ca-certificates
             - gnupg
             - lsb-release
+            - apt-transport-https
       - name: Add docker gpg key
         shell: >
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
