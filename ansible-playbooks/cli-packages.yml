@@ -39,5 +39,5 @@
       - name: Install gcloud
         apt:
             pkg:
-                - google-cloud-cli  
+                - google-cloud-sdk  
         become: true
