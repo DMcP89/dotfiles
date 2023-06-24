@@ -1,7 +1,7 @@
 # dotfiles [![dotfiles-test](https://github.com/DMcP89/dotfiles/actions/workflows/run-test.yml/badge.svg)](https://github.com/DMcP89/dotfiles/actions/workflows/run-test.yml)
 Repository of configuration files for setting up my development environment. Using a combination of bash scripts and ansible playbooks the process of getting an environment setup is almost completely automated.
 
-![powerline](./assests/powerline.png)
+![prompt](./assests/prompt.png)
 
 ![vim](./assests/vim.png)
 
@@ -16,23 +16,26 @@ Repository of configuration files for setting up my development environment. Usi
 ```
 git clone https://github.com/DMcP89/dotfiles.git
 ```
-2. Install Ansible
+2. Run make install
 ```
-cd dotfiles
-.local/bin/install-ansible.sh
+# if you've set your become password in ansible.cfg you can run
+make install
+
+# if you haven't set your become password in ansible.cfg you can run
+make local-install
 ```
-3. Install dependencies
-```
-ansible-galaxy install -r requirements.yml
-```
-4. Run ansible playbooks
-```
-cd ansible-playbooks
-ansible-playbook setup.yml --ask-become-pass
-```
+
+
 ## Features
 ### Powerline
-I use powerline for my terminal prompt. I have a simple setup that will display the current directory and the current git branch, as well as any active python virtual environment.
+I use powerline for my terminal prompt. I have a simple setup that will display the following information from left to right:
+* Hostname (Only while connected via SSH)
+* Username
+* Battery Status (Only if on a laptop)
+* Current date-time
+* Active virtual environment (Only if in a virtual environment)
+* Current working directory
+* Git branch and status (Only if in a git repository)
 
 ### VIM
 A relatively simple vim configuration that uses the powerline plugin to display a status bar, nerdtree for file tree navigation, and a few other features.
@@ -42,7 +45,8 @@ A relatively simple vim configuration that uses the powerline plugin to display 
 * [nerdtree](https://github.com/preservim/nerdtree)
 * [vim-buftabline](https://github.com/ap/vim-buftabline)
 * [pylint](https://github.com/vim-scripts/pylint.vim)
-* [vim_codex](https://https://github.com/tom-doerr/vim_codex)
+* [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-go](https://github.com/fatih/vim-go)
 
 *Color Schemes*
 * [badwolf](https://github.com/sjl/badwolf)
@@ -62,3 +66,15 @@ A relatively simple vim configuration that uses the powerline plugin to display 
 
 ### Go
 * Installs latest version of Go
+
+### Rust
+* [Ttyper](https://github.com/max-niederman/ttyper) is a command line tool that allows you to practice typing in your terminal.
+
+### CLI Tools
+* AWS CLI
+* Azure CLI
+* GCP CLI
+* Helm
+* Kubectl
+* Terraform
+* Docker
