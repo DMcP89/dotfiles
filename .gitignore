@@ -8,5 +8,6 @@
 .config/ttyper
 .config/go
 .config/typer-go
+.config/gcloud
 auth*
 *.swp
