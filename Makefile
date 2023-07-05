@@ -11,6 +11,17 @@ showenv:
 	@echo 'Module:      '${MODULE}
 	@echo 'Tag:         '${TAG}
 
+copy-files:
+	@echo 'Copying dotfiles from home directory'
+	@cp $(HOME)/.bash_aliases $(CURDIR)
+	@cp $(HOME)/.bashrc $(CURDIR)
+	@cp $(HOME)/.gitconfig $(CURDIR)
+	@cp $(HOME)/.vimrc $(CURDIR)
+	@cp $(HOME)/.profile $(CURDIR)
+	@cp -r $(HOME)/.vim/colors $(CURDIR)/.vim/
+	@cp -r $(HOME)/.config $(CURDIR)
+
+
 install-ansible:
 	@echo 'Installing ansible'
 	@sudo apt update
@@ -33,7 +44,7 @@ test:
 	@echo 'Testing installation of dotfiles from Tag: '${TAG}
 	@echo '-----------------------'
 	@echo 'Installing ansible'
-	@.local/bin/install-ansible.sh
+	@$(MAKE) install-ansible
 	@echo '-----------------------'
 	@echo 'Installing ansible dependencies'
 	@ansible-galaxy install -r requirements.yml
@@ -44,7 +55,7 @@ local-test:
 	@echo 'Testing installation of dotfiles from Tag: '${TAG}
 	@echo '-----------------------'
 	@echo 'Installing ansible'
-	@.local/bin/install-ansible.sh
+	@$(MAKE) install-ansible
 	@echo '-----------------------'
 	@echo 'Installing ansible dependencies'
 	@ansible-galaxy install -r requirements.yml

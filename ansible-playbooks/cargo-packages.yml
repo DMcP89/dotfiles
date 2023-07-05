@@ -1,0 +1,7 @@
+---
+- name: cargo-packages
+  hosts: localhost
+  tasks:
+    - name: Install ttyper
+      community.general.cargo:
+        name: ttyper

@@ -13,7 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'ap/vim-buftabline'
 Plugin 'pylint.vim'
-Plugin 'tom-doerr/vim_codex'
+Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
 
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -61,7 +62,7 @@ set shiftwidth=4        " >> or << commands shift lines 4 spaces
 
 
 " turn off search highlight
-nnoremap <C-h> :nohlsearch<CR>
+nnoremap <Leader>h :nohlsearch<CR>
 
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -86,10 +87,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 inoremap <F3> <c-o>:w<cr>
 
 
-" Ctrl + X to call CreateCompletion
-nnoremap  <C-x> :CreateCompletion<CR>
-inoremap  <C-x> <Esc>li<C-g>u<Esc>l:CreateCompletion<CR>
-
 " Auto close brackets
 inoremap { {}<Esc>ha
 inoremap ( ()<Esc>ha
@@ -97,3 +94,6 @@ inoremap [ []<Esc>ha
 inoremap " ""<Esc>ha
 inoremap ' ''<Esc>ha
 inoremap ` ``<Esc>ha
+
+" fugitive mappings
+nnoremap <Leader>d :Gvdiffsplit

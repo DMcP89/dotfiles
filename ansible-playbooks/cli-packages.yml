@@ -1,0 +1,43 @@
+
+---
+- name: cli-packages
+  hosts: localhost
+  tasks:
+      - name: Download AWS zip
+        shell: 'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "{{ playbook_dir  }}/awscliv2.zip"'
+      
+      - name: Unzip AWS zip
+        shell: 'unzip {{ playbook_dir }}/awscliv2.zip'
+
+      - name: Install AWS CLI
+        shell: 'sudo {{ playbook_dir  }}/aws/install -u'
+        become: true
+
+      - name: Clean up AWS install dir
+        shell: 'rm -rf {{ playbook_dir  }}/aws'
+      
+      - name: Clean up AWS cli zip
+        shell: 'rm {{ playbook_dir  }}/awscliv2.zip'
+      
+      - name: Install Azure CLI
+        shell: 'curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash'
+        become: true
+
+      - name: Add gcloud distribution URI
+        shell: 'echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list'
+        become: true
+
+      - name: Importing gcloud public key
+        shell: 'curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -'
+        become: true
+      
+      - name: Run apt update  
+        apt:
+          update_cache: yes
+        become: true
+
+      - name: Install gcloud
+        apt:
+            pkg:
+                - google-cloud-sdk  
+        become: true
