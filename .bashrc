@@ -136,7 +136,8 @@ export TTC_CELSIUS=false
 export TTC_UPDATE_INTERVAL=1
 export TTC_APIKEYS=false
 
-
+# Tinycare TUI settings
+export TINYCARE_WORKSPACE="$HOME/workspace/projects,$HOME/workspace/wochstudios"
 # SSH Alias definitions
 if [ -f ~/.bash_ssh ]; then
     . ~/.bash_ssh
