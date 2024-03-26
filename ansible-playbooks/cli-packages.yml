@@ -36,6 +36,12 @@
           update_cache: yes
         become: true
 
+      - name: Remove old version of gcloud
+        apt:
+            name: google-cloud-sdk
+            state: absent
+        become: true        
+
       - name: Install gcloud
         apt:
             pkg:
