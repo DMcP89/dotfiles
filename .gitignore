@@ -1,6 +1,7 @@
 .vim/bundle
 *ssh
 .bash_secrets
+*history*
 .config/openaiapirc
 .config/helm
 .config/configstore
