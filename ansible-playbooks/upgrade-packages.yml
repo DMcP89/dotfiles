@@ -1,0 +1,11 @@
+---
+- name: apt-pacakges
+  hosts: local-network
+  tasks: 
+      - name: apt update
+        apt:
+          update_cache: yes
+      - name: apt upgrade
+        apt:
+          upgrade: yes
+  become: true

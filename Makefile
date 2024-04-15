@@ -14,6 +14,7 @@ showenv:
 copy-files:
 	@echo 'Copying dotfiles from home directory'
 	@cp $(HOME)/.bash_aliases $(CURDIR)
+#	@cp $(HOME)/.zsh* $(CURDIR)
 	@cp $(HOME)/.bashrc $(CURDIR)
 	@cp $(HOME)/.gitconfig $(CURDIR)
 	@cp $(HOME)/.vimrc $(CURDIR)
