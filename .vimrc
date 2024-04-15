@@ -15,7 +15,6 @@ Plugin 'ap/vim-buftabline'
 Plugin 'pylint.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
-Plugin 'tom-doerr/vim_codex'
 
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -99,8 +98,6 @@ inoremap ` ``<Esc>ha
 " fugitive mappings
 nnoremap <Leader>d :Gvdiffsplit
 
-" vim codex
-nnoremap <Leader>x :CreateCompletion<CR>
 
 " vim-go configs
 " Go syntax highlighting
@@ -119,6 +116,7 @@ let g:go_auto_type_info = 1
 
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
 
 au filetype go inoremap <buffer> . .<C-x><C-o>
 
