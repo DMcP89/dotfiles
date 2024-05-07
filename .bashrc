@@ -175,3 +175,5 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export PATH=$PATH:/$HOME/.cargo/bin
 
 complete -C /usr/bin/terraform terraform
+
+alias tmux="TERM=xterm-256color tmux"
