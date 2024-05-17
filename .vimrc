@@ -15,6 +15,7 @@ Plugin 'ap/vim-buftabline'
 Plugin 'pylint.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
+Plugin 'junegunn/fzf'
 
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -41,6 +42,8 @@ map <C-n> :NERDTreeToggle<CR>
 " Open files in new tab
 let NERDTreeMapOpenInTab='\r'
 
+" FZF
+nnoremap <Leader>f :FZF<CR>
 
 " Colors
 colorscheme badwolf 
@@ -81,7 +84,7 @@ nnoremap <C-x> :bd<CR>
 set laststatus=2
 
 " Search and replace
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <Leader>s :%s/<C-r><C-w>//g<Left><Left>
 
 " Save from insert mode
 inoremap <F3> <c-o>:w<cr>
