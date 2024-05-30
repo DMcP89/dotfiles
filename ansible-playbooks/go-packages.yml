@@ -7,6 +7,8 @@
     - name: gantsign.golang
       vars:
         golang_install_dir: /usr/local/go
+        golang_version: '1.22.2'
+        golang_redis_sha256sum: '5901c52b7a78002aeff14a21f93e0f064f74ce1360fce51c6ee68cd471216a17'
 
   tasks:
     - name: install tinycare-tui
