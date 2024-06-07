@@ -9,6 +9,11 @@ vim.call('plug#begin')
 
 Plug('tpope/vim-fugitive')
 Plug('fatih/vim-go')
+Plug('preservim/nerdtree')
+Plug('junegunn/fzf', { ['do'] = function()
+  vim.fn['fzf#install']()
+end })
+Plug('ap/vim-buftabline')
 
 vim.call('plug#end')
 
