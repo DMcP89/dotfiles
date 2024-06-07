@@ -1,5 +1,16 @@
 -- Set nocompatible
 vim.o.compatible = false
+-- Plugins
+
+local vim = vim
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin')
+
+Plug('tpope/vim-fugitive')
+Plug('fatih/vim-go')
+
+vim.call('plug#end')
 
 -- Colors
 vim.cmd('syntax enable')
@@ -20,4 +31,40 @@ vim.o.tabstop = 4 -- tabs equal 4 spaces
 vim.o.shiftwidth = 4 -- >> or << commands shift lines 4 spaces
 
 vim.cmd('filetype indent on') -- load filetype-specific indent files
+
+-- Buffer Management
+vim.cmd('nnoremap <C-L> :bnext<CR>')
+vim.cmd('nnoremap <C-H> :bprev<CR>')
+vim.cmd('nnoremap <C-x> :bd<CR>')
+
+-- Toggle serach highlight
+vim.cmd('nnoremap <Leader>h :nohlsearch<CR>')
+
+-- Folding Settings
+vim.o.foldenable = true   --enable folding
+vim.o.foldlevelstart = 10   --open most folds by default
+vim.o.foldnestmax = 10      -- 10 nested fold max
+vim.ofoldmethod = indent
+-- space open/closes folds
+vim.cmd('nnoremap <space> za')
+
+-- Search and Replace
+vim.cmd('nnoremap <Leader>r :%s/<C-r><C-w>//g<Left><Left>')
+
+ 
+-- Auto close brackets
+vim.cmd('inoremap { {}<Esc>ha')
+vim.cmd('inoremap ( ()<Esc>ha')
+vim.cmd('inoremap [ []<Esc>ha')
+vim.cmd('inoremap " ""<Esc>ha')
+vim.cmd("inoremap ' ''<Esc>ha")
+vim.cmd('inoremap ` ``<Esc>ha')
+
+
+-- disable arrow keys
+vim.cmd('noremap <Up> <Nop>')
+vim.cmd('noremap <Down> <Nop>')
+vim.cmd('noremap <Left> <Nop>')
+vim.cmd('noremap <Right> <Nop>')
+
 
