@@ -19,8 +19,9 @@ copy-files:
 	@cp $(HOME)/.gitconfig $(CURDIR)
 	@cp $(HOME)/.vimrc $(CURDIR)
 	@cp $(HOME)/.profile $(CURDIR)
+	@cp $(HOME)/.tmux.conf $(CURDIR)
 	@cp -r $(HOME)/.vim/colors $(CURDIR)/.vim/
-	@cp -r $(HOME)/.config $(CURDIR)
+#	@cp -r $(HOME)/.config $(CURDIR)
 
 
 install-ansible:
