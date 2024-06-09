@@ -54,7 +54,7 @@ vim.ofoldmethod = indent
 vim.cmd('nnoremap <space> za')
 
 -- Search and Replace
-vim.cmd('nnoremap <Leader>r :%s/<C-r><C-w>//g<Left><Left>')
+vim.cmd('nnoremap <Leader>R :%s/<C-r><C-w>//g<Left><Left>')
 
  
 -- Auto close brackets
@@ -72,4 +72,41 @@ vim.cmd('noremap <Down> <Nop>')
 vim.cmd('noremap <Left> <Nop>')
 vim.cmd('noremap <Right> <Nop>')
 
+-- Plugin keymappings
+
+-- NERDTree
+vim.cmd('autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif')
+vim.cmd('map <C-n> :NERDTreeToggle<CR>')
+vim.cmd('let NERDTreeMapOpenInTab="\r"')
+
+-- FZF
+vim.cmd('nnoremap <Leader>f :FZF<CR>')
+
+-- Fugitive
+vim.cmd('nnoremap <Leader>d :Gvdiffsplit')
+
+-- vim-go
+-- Go syntax highlighting
+vim.g.go_highlight_fields = 1
+vim.g.go_highlight_functions = 1
+vim.g.go_highlight_function_calls = 1
+vim.g.go_highlight_extra_types = 1
+vim.g.go_highlight_operators = 1
+
+-- formatting and importing
+vim.g.go_fmt_autosave = 1
+vim.g.go_fmt_command = "goimports"
+
+-- Status line types/signatures
+vim.g.go_auto_type_info = 1
+
+vim.cmd('autocmd FileType go nmap <leader>r  <Plug>(go-run)')
+vim.cmd('autocmd FileType go nmap <leader>t  <Plug>(go-test)')
+vim.cmd('autocmd FileType go nmap <leader>b  <Plug>(go-build)')
+
+vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
+
+-- QOL Fixes
+vim.o.completeopt=longest,menuone
+vim.cmd("inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'")
 
