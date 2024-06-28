@@ -52,7 +52,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
 if [ -f ~/.zsh_secrets ]; then
-    . ~/.zsh_secrests
+    . ~/.zsh_secrets
 fi
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
@@ -69,7 +69,7 @@ export TINYCARE_WORKSPACE="$HOME/workspace/projects,$HOME/workspace/wochstudios"
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
-if [ -f $HOME/.local/lib/python3.*/site-packages/powerline/bindings/zsh/powerline.zsh ]; then
+if [ -f $HOME/.local/bin/powerline-daemon ]; then
     $HOME/.local/bin/powerline-daemon -q
     . $HOME/.local/lib/python3.*/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
