@@ -1,10 +1,9 @@
--- Set nocompatible
-vim.o.compatible = false
--- Plugins
-
 local vim = vim
 local Plug = vim.fn['plug#']
+-- Set nocompatible
+vim.o.compatible = false
 
+-- Plugins
 vim.call('plug#begin')
 
 Plug('tpope/vim-fugitive')
@@ -49,7 +48,7 @@ vim.cmd('nnoremap <Leader>h :nohlsearch<CR>')
 vim.o.foldenable = true   --enable folding
 vim.o.foldlevelstart = 10   --open most folds by default
 vim.o.foldnestmax = 10      -- 10 nested fold max
-vim.ofoldmethod = indent
+vim.o.foldmethod = indent
 -- space open/closes folds
 vim.cmd('nnoremap <space> za')
 
@@ -107,6 +106,6 @@ vim.cmd('autocmd FileType go nmap <leader>b  <Plug>(go-build)')
 vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
 
 -- QOL Fixes
-vim.o.completeopt=longest,menuone
+vim.o.completeopt = "menu,menuone,noinsert"
 vim.cmd("inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'")
 
