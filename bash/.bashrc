@@ -152,7 +152,7 @@ fi
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
-if [ -f $HOME/.local/lib/python3.*/site-packages/powerline/bindings/bash/powerline.sh ]; then
+if [ -f $HOME/.local/bin/powerline-daemon ]; then
     $HOME/.local/bin/powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1

@@ -9,6 +9,7 @@
 	 lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit  
 	 stash-all = stash save --include-untracked  
 	 undo = reset --soft HEAD^  
+	 nah = reset --hard HEAD
 	 graph = log --graph --all ' --pretty=format:%Cred%h%Creset %ad | [%C(bold blue)%an%Creset] %Cgreen%d%Creset %s' --date=iso
 [init]
 	defaultBranch = main

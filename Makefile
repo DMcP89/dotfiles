@@ -11,18 +11,6 @@ showenv:
 	@echo 'Module:      '${MODULE}
 	@echo 'Tag:         '${TAG}
 
-copy-files:
-	@echo 'Copying dotfiles from home directory'
-	@cp $(HOME)/.bash_aliases $(CURDIR)
-#	@cp $(HOME)/.zsh* $(CURDIR)
-	@cp $(HOME)/.bashrc $(CURDIR)
-	@cp $(HOME)/.gitconfig $(CURDIR)
-	@cp $(HOME)/.vimrc $(CURDIR)
-	@cp $(HOME)/.profile $(CURDIR)
-	@cp $(HOME)/.tmux.conf $(CURDIR)
-	@cp -r $(HOME)/.vim/colors $(CURDIR)/.vim/
-#	@cp -r $(HOME)/.config $(CURDIR)
-
 
 install-ansible:
 	@echo 'Installing ansible'
