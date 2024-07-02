@@ -1,0 +1,9 @@
+---
+- name: snap-pacakges
+  hosts: localhost
+  tasks:
+      - name: Install "nvim" with option --classic
+        community.general.snap:
+          name: nvim
+          classic: true
+  become: true
