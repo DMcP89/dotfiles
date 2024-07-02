@@ -36,6 +36,12 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+
+if [ -d /snap/bin ] ; then
+    PATH="/snap/bin:$PATH"
+fi
+
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -89,3 +95,6 @@ export PATH=$PATH:/$HOME/.cargo/bin
 
 complete -C /usr/bin/terraform terraform
 source ~/.local/bin/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export VIRTUAL_ENV_DISABLE_PROMPT=
+export BUILDX_EXPERIMENTAL=1

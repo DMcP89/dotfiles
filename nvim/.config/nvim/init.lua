@@ -13,6 +13,8 @@ Plug('junegunn/fzf', { ['do'] = function()
   vim.fn['fzf#install']()
 end })
 Plug('ap/vim-buftabline')
+Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
+
 
 vim.call('plug#end')
 
@@ -107,24 +109,6 @@ vim.cmd('autocmd FileType go nmap <leader>r  <Plug>(go-run)')
 vim.cmd('autocmd FileType go nmap <leader>t  <Plug>(go-test)')
 vim.cmd('autocmd FileType go nmap <leader>b  <Plug>(go-build)')
 
-vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
+--vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
 
--- QOL Fixes
-vim.o.completeopt = "menu,menuone,noinsert"
--- Set keymap options
-local opts = { expr = true, noremap = true, silent = true }
-
--- inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-vim.api.nvim_set_keymap('i', '<CR>', 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"', opts)
-
--- inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-vim.api.nvim_set_keymap('i', '<C-n>', 'pumvisible() ? \'<C-n>\' : \'<C-n><C-r>=pumvisible() ? "\\<lt>Down>" : ""<CR>\'', opts)
-
--- inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-vim.api.nvim_set_keymap('i', '<M-,>', 'pumvisible() ? \'<C-n>\' : \'<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\\<lt>Down>" : ""<CR>\'', opts)
-
--- inoremap <expr> <C-p> pumvisible() ? '<C-p>' : '<C-p><C-r>=pumvisible() ? "\<lt>Up>" : ""<CR>'
-vim.api.nvim_set_keymap('i', '<C-p>', 'pumvisible() ? \'<C-p>\' : \'<C-p><C-r>=pumvisible() ? "\\<lt>Up>" : ""<CR>\'', opts)
-
--- inoremap <expr> <M-.> pumvisible() ? '<C-p>' : '<C-x><C-o><C-p><C-n><C-r>=pumvisible() ? "\<lt>Up>" : ""<CR>'
-vim.api.nvim_set_keymap('i', '<M-.>', 'pumvisible() ? \'<C-p>\' : \'<C-x><C-o><C-p><C-n><C-r>=pumvisible() ? "\\<lt>Up>" : ""<CR>\'', opts)
+require("coc_config")
