@@ -14,5 +14,7 @@
      stow zsh
      stow vim
      stow nvim
+     stow i3
+     stow alacritty
     args:
       chdir: "{{ playbook_dir }}/.."

@@ -156,6 +156,9 @@
             - zsh
             - jq  
             - stow  
+            - snapd
+            - hsetroot 
+            - rofi
       - name: Add my user to docker group
         ansible.builtin.user:
           name: "{{ ansible_user_id }}"

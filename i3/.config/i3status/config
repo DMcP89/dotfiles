@@ -11,8 +11,6 @@ general {
 order += "load"
 order += "cpu_temperature 0"
 order += "disk /"
-order += "disk /home"
-order += "wireless wlp2s0"
 order += "volume master"
 order += "time"
 
@@ -21,23 +19,15 @@ load {
 }
 
 cpu_temperature 0 {
-        format = "<span >  %degrees °C </span>"
+        format = "<span > CPU %degrees °C </span>"
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 disk "/" {
-        format = "<span >  %free Free </span>"
-}
-
-disk "/home" {
-        format = "<span >  %free Free </span>"
+        format = "<span > Disk %free Free </span>"
 }
 
 
-wireless wlp2s0 {
-        format_up = "<span color='white'>  %essid </span>"
-        format_down = "<span >  Disconnected </span>"
-}
 
 volume master {
         format = "<span >  %volume </span>"
