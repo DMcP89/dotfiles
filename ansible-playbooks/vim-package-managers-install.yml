@@ -1,0 +1,15 @@
+---
+- name: vundle-install
+  hosts: localhost
+  tasks:
+    - name: Install vundle plugin manager for Vim
+      git:
+        repo: 'https://github.com/VundleVim/Vundle.vim.git'
+        dest: ~/.vim/bundle/Vundle.vim
+- name: vim-plug-install
+  hosts: localhost
+  tasks:
+    - name: Install vim-plug
+      shell: >
+        curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
