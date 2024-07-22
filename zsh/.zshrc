@@ -96,7 +96,6 @@ export PATH=$PATH:/$HOME/.cargo/bin
 complete -C /usr/bin/terraform terraform
 source ~/.local/bin/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export VIRTUAL_ENV_DISABLE_PROMPT=
 export BUILDX_EXPERIMENTAL=1
 
 # FZF 
@@ -104,3 +103,4 @@ export BUILDX_EXPERIMENTAL=1
 source <(fzf --zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export VIRTUAL_ENV_DISABLE_PROMPT=1
