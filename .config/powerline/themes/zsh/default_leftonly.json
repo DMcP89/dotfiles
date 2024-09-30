@@ -10,9 +10,6 @@
         "priority": 30
       },
       {
-        "function": "powerline.segments.common.bat.battery"
-      },
-      {
         "function": "powerline.segments.common.time.date",
         "args": {
             "format": "%Y-%m-%d %H:%M",
