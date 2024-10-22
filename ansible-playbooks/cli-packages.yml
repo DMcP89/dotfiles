@@ -3,6 +3,10 @@
 - name: cli-packages
   hosts: localhost
   tasks:
+      - name: Instal ZSH autosuggestions
+        git:
+          repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+          dest: ~/.local/bin/zsh-autosuggestions/zsh-autosuggestions.zsh
       - name: Download AWS zip
         shell: 'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "{{ playbook_dir  }}/awscliv2.zip"'
       

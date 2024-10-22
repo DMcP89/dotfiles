@@ -1,0 +1,22 @@
+ {
+    "languageserver": {
+      "go": {
+        "command": "gopls",
+        "rootPatterns": ["go.mod"],
+        "trace.server": "verbose",
+        "filetypes": ["go"]
+      }
+    },
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.parameterTypes": false,
+    "pyright.inlayHints.functionReturnTypes": false,
+    "pyright.disableDiagnostics": true,
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.0-standalone-strict/all.json": "/*.kubernetes.yaml",
+        "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.0-standalone-strict/all.json": "/*.k8s.yaml"
+    },
+    "yaml.validate": true,
+    "yaml.format.enable": true,
+    "yaml.hover": true,
+    "yaml.completion": true
+  }

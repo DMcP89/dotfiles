@@ -2,11 +2,14 @@
 - name: Install apt packages
   import_playbook: apt-packages.yml
 
+- name: Install snap packages
+  import_playbook: snap-packages.yml
+  
 - name: Copy dotfiles
   import_playbook: dotfile-copy.yml
 
 - name: Install vundle
-  import_playbook: vundle-install.yml
+  import_playbook: vim-package-managers-install.yml
 
 - name: Install gems
   import_playbook: gem-packages.yml

@@ -36,6 +36,12 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+
+if [ -d /snap/bin ] ; then
+    PATH="/snap/bin:$PATH"
+fi
+
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -52,7 +58,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
 if [ -f ~/.zsh_secrets ]; then
-    . ~/.zsh_secrests
+    . ~/.zsh_secrets
 fi
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
@@ -69,7 +75,7 @@ export TINYCARE_WORKSPACE="$HOME/workspace/projects,$HOME/workspace/wochstudios"
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
-if [ -f $HOME/.local/lib/python3.*/site-packages/powerline/bindings/zsh/powerline.zsh ]; then
+if [ -f $HOME/.local/bin/powerline-daemon ]; then
     $HOME/.local/bin/powerline-daemon -q
     . $HOME/.local/lib/python3.*/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
@@ -89,3 +95,12 @@ export PATH=$PATH:/$HOME/.cargo/bin
 
 complete -C /usr/bin/terraform terraform
 source ~/.local/bin/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export BUILDX_EXPERIMENTAL=1
+
+# FZF 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export VIRTUAL_ENV_DISABLE_PROMPT=1

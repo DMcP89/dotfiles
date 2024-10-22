@@ -13,6 +13,8 @@ Plug('junegunn/fzf', { ['do'] = function()
   vim.fn['fzf#install']()
 end })
 Plug('ap/vim-buftabline')
+Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
+
 
 vim.call('plug#end')
 
@@ -33,7 +35,7 @@ vim.o.hlsearch = true -- highlight matches
 vim.o.expandtab = true -- expand tabs into spaces
 vim.o.tabstop = 4 -- tabs equal 4 spaces
 vim.o.shiftwidth = 4 -- >> or << commands shift lines 4 spaces
-
+vim.o.mouse = ''
 vim.cmd('filetype indent on') -- load filetype-specific indent files
 
 -- Buffer Management
@@ -71,6 +73,10 @@ vim.cmd('noremap <Down> <Nop>')
 vim.cmd('noremap <Left> <Nop>')
 vim.cmd('noremap <Right> <Nop>')
 
+-- trigger autocomplete
+vim.cmd('inoremap <C-e> <C-x><C-o>')
+
+
 -- Plugin keymappings
 
 -- NERDTree
@@ -103,9 +109,6 @@ vim.cmd('autocmd FileType go nmap <leader>r  <Plug>(go-run)')
 vim.cmd('autocmd FileType go nmap <leader>t  <Plug>(go-test)')
 vim.cmd('autocmd FileType go nmap <leader>b  <Plug>(go-build)')
 
-vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
+--vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
 
--- QOL Fixes
-vim.o.completeopt = "menu,menuone,noinsert"
-vim.cmd("inoremap <expr> <CR> pumvisible() ? '<C-y>' : '<C-g>u<CR>'")
-
+require("coc_config")
