@@ -100,7 +100,5 @@ export BUILDX_EXPERIMENTAL=1
 
 # FZF 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VIRTUAL_ENV_DISABLE_PROMPT=1

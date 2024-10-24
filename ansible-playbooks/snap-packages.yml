@@ -6,4 +6,7 @@
         community.general.snap:
           name: nvim
           classic: true
+      - name: Install dbeaver-ce 
+        community.general.snap:
+          name: dbeaver-ce
   become: true
