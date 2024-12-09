@@ -71,7 +71,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/go/bin
 
-export TINYCARE_WORKSPACE="$HOME/workspace/projects,$HOME/workspace/wochstudios"
+export TINYCARE_WORKSPACE="$HOME/workspace"
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
