@@ -71,7 +71,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/go/bin
 
-export TINYCARE_WORKSPACE="$HOME/workspace/projects,$HOME/workspace/wochstudios"
+export TINYCARE_WORKSPACE="$HOME/workspace"
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
@@ -100,7 +100,5 @@ export BUILDX_EXPERIMENTAL=1
 
 # FZF 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VIRTUAL_ENV_DISABLE_PROMPT=1

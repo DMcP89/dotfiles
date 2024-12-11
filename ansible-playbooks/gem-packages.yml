@@ -6,3 +6,4 @@
       community.general.gem:
         name: mdless
         state: latest
+      become: yes

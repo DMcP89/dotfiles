@@ -10,6 +10,7 @@ showenv:
 	@echo '-----------------------'
 	@echo 'Module:      '${MODULE}
 	@echo 'Tag:         '${TAG}
+	@echo 'USER:'${USER}
 
 
 install-ansible:
@@ -28,7 +29,7 @@ install:
 	@echo 'Installing ansible dependencies'
 	@ansible-galaxy install -r requirements.yml
 	@echo '-----------------------'
-	@ansible-playbook ansible-playbooks/setup.yml
+	@ansible-playbook -u ${USER} ansible-playbooks/setup.yml
 
 test:
 	@echo 'Testing installation of dotfiles from Tag: '${TAG}
@@ -39,7 +40,7 @@ test:
 	@echo 'Installing ansible dependencies'
 	@ansible-galaxy install -r requirements.yml
 	@echo '-----------------------'
-	@ansible-playbook ansible-playbooks/setup.yml --check
+	@ansible-playbook -u ${USER}ansible-playbooks/setup.yml --check
 
 local-test:
 	@echo 'Testing installation of dotfiles from Tag: '${TAG}
@@ -50,7 +51,7 @@ local-test:
 	@echo 'Installing ansible dependencies'
 	@ansible-galaxy install -r requirements.yml
 	@echo '-----------------------'
-	@ansible-playbook ansible-playbooks/setup.yml --check -K
+	@ansible-playbook -u ${USER}ansible-playbooks/setup.yml --check -K
 
 local-install:
 	@echo 'Installing dotfiles from Tag: '${TAG}
@@ -61,4 +62,4 @@ local-install:
 	@echo 'Installing ansible dependencies'
 	@ansible-galaxy install -r requirements.yml
 	@echo '-----------------------'
-	@ansible-playbook ansible-playbooks/setup.yml -K
+	@ansible-playbook -u ${USER} ansible-playbooks/setup.yml -K

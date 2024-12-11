@@ -2,6 +2,10 @@
 - name: Configure dotfiles
   hosts: localhost
   tasks:
+  - name: Change default shell
+    ansible.builtin.command: usermod --shell /bin/zsh {{ ansible_user }}
+    become: true
+    changed_when: false
   - name: Stow dotfile packages
     shell: |
      stow bash
@@ -16,5 +20,8 @@
      stow nvim
      stow i3
      stow alacritty
+     stow fonts
     args:
       chdir: "{{ playbook_dir }}/.."
+
+
