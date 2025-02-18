@@ -6,6 +6,7 @@ vim.o.compatible = false
 -- Plugins
 vim.call('plug#begin')
 
+Plug('github/copilot.vim')
 Plug('tpope/vim-fugitive')
 Plug('fatih/vim-go')
 Plug('preservim/nerdtree')
@@ -14,6 +15,13 @@ Plug('junegunn/fzf', { ['do'] = function()
 end })
 Plug('ap/vim-buftabline')
 Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
+Plug('mfussenegger/nvim-dap')
+Plug('leoluz/nvim-dap-go', {['do'] = function()
+  require('dap-go').setup()
+end })
+Plug ('nvim-neotest/nvim-nio')
+Plug ('rcarriga/nvim-dap-ui')
+
 
 
 vim.call('plug#end')
@@ -112,3 +120,4 @@ vim.cmd('autocmd FileType go nmap <leader>b  <Plug>(go-build)')
 --vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
 
 require("coc_config")
+require("dap_config")
