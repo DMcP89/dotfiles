@@ -12,4 +12,4 @@
 
   tasks:
     - name: install tinycare-tui
-      command: /usr/local/go/bin/go install github.com/DMcP89/tinycare-tui@latest
+      command: /usr/local/go/bin/go install github.com/DMcP89/tinycare-tui/cmd/tinycare-tui@latest
