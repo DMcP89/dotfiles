@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
   - name: Change default shell
-    ansible.builtin.command: usermod --shell /bin/zsh {{ ansible_user }}
+    ansible.builtin.command: usermod --shell /bin/zsh {{ ansible_user | default('dave') }}
     become: true
     changed_when: false
   - name: Stow dotfile packages
