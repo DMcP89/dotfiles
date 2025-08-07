@@ -5,12 +5,12 @@
   tasks:
       - name: Remove ZSH autosuggestions
         file:
-          path: ~/.local/bin/zsh-autosuggestions/zsh-autosuggestions.zsh
+          path: ~/.local/bin/zsh-autosuggestions
           state: absent
       - name: Instal ZSH autosuggestions
         git:
           repo: 'https://github.com/zsh-users/zsh-autosuggestions'
-          dest: ~/.local/bin/zsh-autosuggestions/zsh-autosuggestions.zsh
+          dest: ~/.local/bin/zsh-autosuggestions
 
       - name: Download AWS zip
         shell: 'curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "{{ playbook_dir  }}/awscliv2.zip"'
