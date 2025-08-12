@@ -170,6 +170,6 @@
         ignore_errors: true
   roles:
       - { role: githubixx.kubectl, ignore_errors: yes }
-      - { role: gantsign.helm, ignore_errors: yes }
+      - { role: gantsign.helm, ignore_errors: yes, helm_version: '3.17.0' }
       - { role: diodonfrost.terraform, ignore_errors: yes }
   become: true
