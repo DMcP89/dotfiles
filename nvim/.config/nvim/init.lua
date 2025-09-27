@@ -6,7 +6,8 @@ vim.o.compatible = false
 -- Plugins
 vim.call('plug#begin')
 
-Plug('github/copilot.vim')
+--Plug('github/copilot.vim')
+Plug ('nvim-lua/plenary.nvim')
 Plug('tpope/vim-fugitive')
 Plug('fatih/vim-go')
 Plug('preservim/nerdtree')
@@ -21,8 +22,9 @@ Plug('leoluz/nvim-dap-go', {['do'] = function()
 end })
 Plug ('nvim-neotest/nvim-nio')
 Plug ('rcarriga/nvim-dap-ui')
-
-
+Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+Plug ('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' })
+Plug ('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.8' })
 
 vim.call('plug#end')
 
@@ -93,7 +95,14 @@ vim.cmd('map <C-n> :NERDTreeToggle<CR>')
 vim.cmd('let NERDTreeMapOpenInTab="\r"')
 
 -- FZF
-vim.cmd('nnoremap <Leader>f :FZF<CR>')
+--vim.cmd('nnoremap <Leader>f :FZF<CR>')
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- Fugitive
 vim.cmd('nnoremap <Leader>d :Gvdiffsplit')
@@ -118,6 +127,14 @@ vim.cmd('autocmd FileType go nmap <leader>t  <Plug>(go-test)')
 vim.cmd('autocmd FileType go nmap <leader>b  <Plug>(go-build)')
 
 --vim.cmd('au filetype go inoremap <buffer> . .<C-x><C-o>')
+
+vim.cmd [[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+]]
+
 
 require("coc_config")
 require("dap_config")
