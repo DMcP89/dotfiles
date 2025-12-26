@@ -12,3 +12,4 @@ vim/.vim/bundle
 .config/gcloud
 auth*
 *.swp
+btop/.config/btop/btop.log

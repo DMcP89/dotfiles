@@ -6,7 +6,7 @@ vim.o.compatible = false
 -- Plugins
 vim.call('plug#begin')
 
---Plug('github/copilot.vim')
+Plug('github/copilot.vim')
 Plug ('nvim-lua/plenary.nvim')
 Plug('tpope/vim-fugitive')
 Plug('fatih/vim-go')
