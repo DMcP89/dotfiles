@@ -75,11 +75,6 @@ export TINYCARE_WORKSPACE="$HOME/workspace"
 # Powerline
 export PATH=$PATH:$HOME/.local/bin
 
-if [ -f $HOME/.local/bin/powerline-daemon ]; then
-    $HOME/.local/bin/powerline-daemon -q
-    . $HOME/.local/lib/python3.*/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
-
 # Poetry
 export PATH=$PATH:$HOME/.poetry/bin
 
@@ -102,3 +97,40 @@ export BUILDX_EXPERIMENTAL=1
 # Set up fzf key bindings and fuzzy completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+# Git status function
+git_info() {
+  git rev-parse --git-dir &>/dev/null || return
+
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || \
+  branch=$(git rev-parse --short HEAD 2>/dev/null)
+  [ -z "$branch" ] && return
+
+  local output="%{%F{magenta}%}${branch}%{%f%}"
+
+  local staged unstaged untracked
+  staged=$(git diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
+  unstaged=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
+  untracked=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d ' ')
+
+  [ "$staged" -gt 0 ]    && output+=" %{%F{green}%}●${staged}%{%f%}"
+  [ "$unstaged" -gt 0 ]  && output+=" %{%F{red}%}●${unstaged}%{%f%}"
+  [ "$untracked" -gt 0 ] && output+=" %{%F{yellow}%}?${untracked}%{%f%}"
+
+  local remote
+  remote=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)
+  if [ -n "$remote" ]; then
+    local ahead behind
+    ahead=$(git rev-list @{u}..HEAD 2>/dev/null | wc -l | tr -d ' ')
+    behind=$(git rev-list HEAD..@{u} 2>/dev/null | wc -l | tr -d ' ')
+
+    [ "$ahead" -gt 0 ]  && output+=" %{%F{cyan}%}↑${ahead}%{%f%}"
+    [ "$behind" -gt 0 ] && output+=" %{%F{cyan}%}↓${behind}%{%f%}"
+  fi
+
+  echo " (${output})"
+}
+
+setopt PROMPT_SUBST
+
+PROMPT='%{%F{cyan}%}%n@%m%{%f%}:%{%F{yellow}%}%~%{%f%}$(git_info) %{%F{green}%}❯%{%f%} '

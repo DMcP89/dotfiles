@@ -2,15 +2,6 @@
 - name: pip-packages
   hosts: localhost
   tasks:
-    - name: Install OpenAI
-      pip:
-        name: OpenAI
-    - name: Install Powerline
-      pip:
-        name: powerline-status
-    - name: Install Powerline-gitstatus
-      pip:
-        name: powerline-gitstatus
     - name: Install poetry
       shell: >
         curl -sSL https://install.python-poetry.org | python3 -

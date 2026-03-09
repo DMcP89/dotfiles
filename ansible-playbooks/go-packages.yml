@@ -1,15 +1,23 @@
 ---
 - name: go-pacakges
   hosts: localhost
-  become: true
   
-  roles:
-    - name: gantsign.golang
-      vars:
-        golang_install_dir: /usr/local/go
-        golang_version: '1.22.2'
-        golang_redis_sha256sum: '5901c52b7a78002aeff14a21f93e0f064f74ce1360fce51c6ee68cd471216a17'
-
   tasks:
+    - name: Remove existing Go installation
+      become: yes
+      ansible.builtin.file:
+        path: /usr/local/go
+        state: absent
+
+    - name: Install latest version of Go
+      become: yes
+      ansible.builtin.shell: |
+        curl -s https://go.dev/dl/ | grep linux-amd64.tar.gz | head -n 1 | grep -oP 'href="\K[^"]+' | xargs -I{} curl -LO https://go.dev{}
+        tar -C /usr/local -xzf go*.linux-amd64.tar.gz
+        rm go*.linux-amd64.tar.gz
+      args:
+        creates: /usr/local/go/bin/go
     - name: install tinycare-tui
       command: /usr/local/go/bin/go install github.com/DMcP89/tinycare-tui/cmd/tinycare-tui@latest
+    - name: install lazygit
+      command: /usr/local/go/bin/go install github.com/jesseduffield/lazygit@latest 

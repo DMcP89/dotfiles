@@ -61,7 +61,6 @@
             - libeatmydata1
             - libedit-dev
             - libffi-dev
-            - libflac8
             - libfontconfig1
             - libfontenc1
             - libgl1-mesa-dri
@@ -71,10 +70,8 @@
             - libglx-mesa0
             - libglx0
             - libice6
-            - libllvm12
             - libpciaccess0
             - libpulse0
-            - libpulsedsp
             - libsensors-config
             - libsensors5
             - libsm6
@@ -121,7 +118,6 @@
             - openssh-sftp-server
             - pkg-config
             - pulseaudio-utils
-            - python3-distutils
             - python3-docutils
             - python3-importlib-metadata
             - python3-jinja2
@@ -145,7 +141,6 @@
             - show-motd
             - ssh-import-id
             - sysvinit-utils
-            - sqlite
             - update-motd
             - w3m
             - x11-common
